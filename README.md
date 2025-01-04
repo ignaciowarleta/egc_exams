@@ -27,6 +27,7 @@ Git commit -m “mensaje”
 / Git push origin master
 ---
 Balance técnico-organizativo
+
 10.	Cree una rama rv1 y haga tres cambios en el fichero decide/visualizer/templates/visualizer/visualizer.html, de manera que cada cambio sea un commit diferente. 
 / Git checkout -b rv1
 
@@ -90,7 +91,7 @@ git commit -m "Agregar un nuevo título al visualizador"] x3
 
 11.	Muévase a egc_test e integre únicamente los cambios relativos al segundo commit de la rama ch1, mediante cherry-pick. 
 
-git checkout egc_test
+/ git checkout egc_test
 
 Ahora, necesitas obtener el hash del segundo commit de la rama ch1:
 git log ch1
@@ -98,23 +99,27 @@ git log ch1
 Busca el hash del segundo commit. Usa el comando cherry-pick para aplicar ese commit a egc_test:
 git cherry-pick hash1234
 
+---
+
 Intensificación técnica
 12.	Realice un cambio en una línea del README.md. Genere un parche con este cambio. 
-Git add README.md
+/ Git add README.md
 Git diff HEAD > cambio_readme.patch
 
 13.	Cambie a una rama diferente y aplique el parche en esa rama. 
-Git chekout -b rama
+/ Git chekout -b rama
 Git apply cambio_readme.patch
 
 14.	Haga commit de los cambios realizados. 
-git add README.md
+/ git add README.md
 git commit -m "mensaje"
+
+---
 
 Intensificación técnica (Turno mañana)
 12.	Traslade un cambio específico de la rama egc_test a la rama master/main utilizando cherry-pick.
 
-git checkout egc_test
+/ git checkout egc_test
 git log (visualizamos el historial de commits para identificar el hash que queramos trasladar) (Anota el hash (los primeros 7 caracteres son suficientes) del commit que deseas trasladar.)
 git checkout master
 git cherry-pick <commit-hash>
@@ -123,10 +128,12 @@ git cherry-pick <commit-hash>
 git add <archivo-con-conflicto>
 git cherry-pick  --continue]
 
+---
+
 Intensificación técnica (Turno 18:30)
 12.	Cree una nueva rama rbs y haga en ella 5 commits (a,b,c,d,e). 
 
-git checkout -b rbs
+/ git checkout -b rbs
 
 git add archivo.txt
 git commit -m "a: Primer commit"
@@ -134,7 +141,7 @@ git commit -m "a: Primer commit"
 
 13.	Utilice rebase interactivo para combinar los commits b, c y d en uno solo, de manera que el historial final contenga 3 commits: a, bcd, e.  (Incluya las capturas que sean necesarias para demostrar el proceso).
 
-git rebase -i HEAD~5
+/ git rebase -i HEAD~5
 
 Se abrirá un editor de texto: 
 
@@ -170,6 +177,7 @@ HEAD~2 (c)
 HEAD~3 (b)
 Esto omitiría el commit a]
 
+---
 
 Ejercicio B (GITHUB ACTIONS)
 Intensificiación colaborativa
