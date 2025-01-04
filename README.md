@@ -218,7 +218,7 @@ services:
 Cambiamos runs-on: ubuntu-latest por runs-on: ubuntu-22.04
 
 4.	Haga commit y push de los cambios realizados. 
-git add .github/workflows/django.yml
+/ git add .github/workflows/django.yml
 git commit -m "mensaje"
 git push
 
@@ -252,13 +252,11 @@ jobs:
         python-version: [3.10] / Cambio por [3.10.12, 3.11]
 
 6.	Haga commit y push de los cambios realizados. 
-git add .github/workflows/django.yml
+/ git add .github/workflows/django.yml
 git commit -m "mensaje"
 git push
 
 7.	Verifique el correcto funcionamiento del workflow. 
----
-
 
 Balance técnico-organizativo (Turno 198:30)
 5.	Configure el workflow django.yml para lanzar las pruebas con dos versiones de postgres diferentes (14.9 y 15). 
@@ -302,15 +300,16 @@ jobs:
           prerelease: false
 
 9.	Haga commit y push de los cambios realizados.
-git add .github/workflows/release.yml
+/ git add .github/workflows/release.yml
 git commit -m "mensaje"
 git push
 
 10.	Verifique que se ha creado una release. 
-git tag v1.0.0
+/ git tag v1.0.0
 git push origin v1.0.0
 Comprobamos en la pestaña Releases de Github si funciona el paso 8 y se ha generado la reléase automática.
 
+---
 
 EJERCICIO C (DOCKER)
 Intensificiación colaborativa
@@ -319,22 +318,22 @@ Para desplegar el proyecto usando Docker, debes asegurarte de que el Dockerfile 
 •	Dockerfile: Asegúrate de que el Dockerfile esté correctamente configurado para el entorno de tu aplicación (por ejemplo, Django, Flask, etc.). Aquí hay un ejemplo básico para una aplicación Django:
 dockerfile
 Copiar código
-# Usa una imagen base oficial de Python
+Usa una imagen base oficial de Python
 FROM python:3.11
 
-# Establece el directorio de trabajo en el contenedor
+Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copia los archivos del proyecto al contenedor
+Copia los archivos del proyecto al contenedor
 COPY . /app
 
-# Instala las dependencias necesarias
+Instala las dependencias necesarias
 RUN pip install -r requirements.txt
 
-# Expone el puerto que usará el servidor web
+Expone el puerto que usará el servidor web
 EXPOSE 8000
 
-# Comando para iniciar la aplicación
+Comando para iniciar la aplicación
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
 •	docker-compose.yml: Aquí asegúrate de tener los servicios correctos, como la base de datos y la aplicación web. Por ejemplo:
 yaml
@@ -362,7 +361,7 @@ services:
       - "5432:5432"
 
 2.	Haga commit de los cambios realizados. 
-git add Dockerfile docker-compose.yml
+/ git add Dockerfile docker-compose.yml
 git commit -m "mensaje"
 git push
 
@@ -390,6 +389,7 @@ ports:
 Reinicio docker
 docker-compose up --build
 
+---
 
 EJERCICIO D (VAGRANT)
 Intensificiación colaborativa
@@ -399,19 +399,19 @@ Abre el archivo Vagrantfile. Configura la máquina virtual para el entorno de de
 ruby
 Copiar código
 Vagrant.configure("2") do |config|
-  # Utilizar una box de Ubuntu 22.04
+  Utilizar una box de Ubuntu 22.04
   config.vm.box = "ubuntu/bionic64"
 
-  # Configuración de red (red privada)
+  Configuración de red (red privada)
   config.vm.network "private_network", type: "dhcp"
 
-  # Definir la configuración de la máquina
+  Definir la configuración de la máquina
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "2048"
     vb.cpus = 2
   end
 
-  # Provisión de la máquina
+  Provisión de la máquina
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt-get update
     sudo apt-get install -y python3-pip python3-dev libpq-dev postgresql postgresql-contrib nginx
