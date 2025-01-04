@@ -1,45 +1,45 @@
 Ejecicio A (GIT)
 Intensificiación colaborativa
 1.	Realice un fork de este repositorio con el nombre EGC2324-turno31-"uvus".
----
+
 2.	Clone el repositorio del cual ha hecho el fork. 
-Git clone url
+/ Git clone url
 
 3.	Cree una nueva rama llamada egc_test en el repositorio.
-cd REPO
+/ cd REPO
 git branch egc_test
 
 4.	"Salte" a la rama recien creada. 
-Git chekcout egc_test
+/ Git chekcout egc_test
 (git chekcout -b egc_test      crea y salta)
 
 5.	En el código de DECIDE del repositorio existe un error. Identifique el error ejecutando en su máquina el código.
----
+
 6.	Cree una "issue" en el fork del repositorio para reportar el error según lo visto en clase. 
----
+
 7.	Realice las modificaciones necesarias para corregir el error y haga commit de los cambios en la rama egc_test.
-Git add .
+/ Git add .
 Git commit -m “mensaje”
 
 8.	Mediante una pull request, fusione en la rama master/main del repositorio los cambios de la rama de egc_test y asocielo a la issue anterior. 
----
-9.	Refleje los cambios del repositorio local en el repositorio remoto que creó en el primer paso.
-Git push origin master
 
+9.	Refleje los cambios del repositorio local en el repositorio remoto que creó en el primer paso.
+/ Git push origin master
+---
 Balance técnico-organizativo
 10.	Cree una rama rv1 y haga tres cambios en el fichero decide/visualizer/templates/visualizer/visualizer.html, de manera que cada cambio sea un commit diferente. 
-Git checkout -b rv1
+/ Git checkout -b rv1
 
 Git add .
 Git commit -m “mensaje”
 
 11.	Deshaga los dos últimos cambios de manera soft. 
-git reset --soft HEAD~2
-
+/ git reset --soft HEAD~2
+---
 Balance técnico-organizativo (Turno mañana) https://github.com/OrlandoLAB/EGC2324-turno11-orllabled/blob/main/Examen11.md
 
 10.	Cree dos ramas rq1 y rq2, haga modificaciones distintas en el fichero requirements.txt en las que se de un conflicto en alguna linea. 
-git checkout -b rq1
+/ git checkout -b rq1
 (modificamos el archivo)
 git add requirements.txt
 git commit -m "Modificación en rq1"
@@ -50,7 +50,7 @@ git add requirements.txt
 git commit -m "Modificación en rq2" 
 
 11.	Fusione, resuelva el conflicto e integre los cambios en egc_test. 
-git checkout egc_test
+/ git checkout egc_test
 git merge rq1
 	git merge rq2
 	
@@ -60,31 +60,30 @@ git merge rq1
 	git status
 git push origin egc_test
 
+---
+
 Balance técnico-organizativo (Turno 16:30)
 https://github.com/laurolmer/EGC-2324-1630/blob/main/Examen32.md
 
 10.	Cree una rama rv1 y haga tres cambios en el fichero decide/visualizer/templates/visualizer/visualizer.html, de manera que cada cambio sea un commit diferente. 
 
-git checkout -b rv1
+/ git checkout -b rv1
 [Modificar +
 git add decide/visualizer/templates/visualizer/visualizer.html
 git commit -m "Agregar un nuevo título al visualizador"] x3
 
 
 11.	Deshaga los dos últimos cambios de manera soft. 
-git reset --soft HEAD~2
+/ git reset --soft HEAD~2
 
-
-
-
-
+---
 
 Balance técnico-organizativo (Turno 18:30)
 https://github.com/alvarobernal2412/EGC2324-turno42-alvbercau/blob/main/Examen42.md
 
 10.	Cree una rama ch1 y haga en ella 3 commits con cambios en el/los fichero/s de su preferencia. 
 
-git checkout -b ch1
+/ git checkout -b ch1
 [Modificar +
 git add decide/visualizer/templates/visualizer/visualizer.html
 git commit -m "Agregar un nuevo título al visualizador"] x3
