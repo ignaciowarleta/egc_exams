@@ -52,3 +52,6 @@ rosemary
 
 MIGRACIONES
 flask db upgrade
+rosemary db:seed
+flask run --host=0.0.0.0 --reload --debug
+
