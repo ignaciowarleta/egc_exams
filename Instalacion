@@ -1,0 +1,54 @@
+sudo apt update -y
+sudo apt upgrade -y
+
+Git config —global user.name “ignaciowarleta”
+Git config —global user.email nachowarleta00@gmail.com
+Ssh-keygen -t rsa -b 4096
+Cd ~/.ssh
+Cat id_rsa.pub
+GitHub -> Settings -> SSH and GPG keys -> New SSH key -> Pegar clave pública (id_rsa.pub)
+
+git clone git@github.com:ignaciowarleta/uvlhub_practicas.git
+cd uvlhub_practicas
+
+sudo apt install mariadb-server -y
+sudo systemctl start mariadb
+
+sudo mysql_secure_installation
+
+- Enter current password for root (enter for none): (enter)
+- Switch to unix_socket authentication [Y/n]: `y`
+- Change the root password? [Y/n]: `y`
+    - New password: `uvlhubdb_root_password`
+    - Re-enter new password: `uvlhubdb_root_password`
+- Remove anonymous users? [Y/n]: `y`
+- Disallow root login remotely? [Y/n]: `y` 
+- Remove test database and access to it? [Y/n]: `y`
+- Reload privilege tables now? [Y/n] : `y`
+
+sudo mysql -u root -p
+
+CREATE DATABASE uvlhubdb;
+CREATE DATABASE uvlhubdb_test;
+CREATE USER 'uvlhubdb_user'@'localhost' IDENTIFIED BY 'uvlhubdb_password';
+GRANT ALL PRIVILEGES ON uvlhubdb.* TO 'uvlhubdb_user'@'localhost';
+GRANT ALL PRIVILEGES ON uvlhubdb_test.* TO 'uvlhubdb_user'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+cp .env.local.example .env
+echo "webhook" > .moduleignore
+
+DEPENDENCIAS
+sudo apt install python3.12-venv
+python3.12 -m venv venv
+source venv/bin/activate
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+pip install -e ./
+rosemary
+
+MIGRACIONES
+flask db upgrade
