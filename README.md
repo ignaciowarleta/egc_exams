@@ -15,16 +15,23 @@ git branch egc_test
 
 5.	En el código de DECIDE del repositorio existe un error. Identifique el error ejecutando en su máquina el código.
 
-6.	Cree una "issue" en el fork del repositorio para reportar el error según lo visto en clase. 
+6.	Cree una "issue" en el fork del repositorio para reportar el error según lo visto en clase.
+   Settings - Feautures - issues enabled
 
 7.	Realice las modificaciones necesarias para corregir el error y haga commit de los cambios en la rama egc_test.
 / Git add .
 Git commit -m “mensaje”
 
-8.	Mediante una pull request, fusione en la rama master/main del repositorio los cambios de la rama de egc_test y asocielo a la issue anterior. 
+8.	Mediante una pull request, fusione en la rama master/main del repositorio los cambios de la rama de egc_test y asocielo a la issue anterior.
+    / git push -u origin nombre_de_tu_rama
+   Closes #1 (issue)	
 
 9.	Refleje los cambios del repositorio local en el repositorio remoto que creó en el primer paso.
-/ Git push origin master
+/
+git checkout main
+git pull origin main
+git merge egc_test
+Git push origin main
 ---
 Balance técnico-organizativo
 
