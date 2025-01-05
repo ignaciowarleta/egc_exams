@@ -43,6 +43,8 @@ Git commit -m “mensaje”
 
 11.	Deshaga los dos últimos cambios de manera soft. 
 / git reset --soft HEAD~2
+
+(Lo puedo comprobar con git log --oneline)
 ---
 Balance técnico-organizativo (Turno mañana) https://github.com/OrlandoLAB/EGC2324-turno11-orllabled/blob/main/Examen11.md
 
