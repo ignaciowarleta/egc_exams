@@ -1,0 +1,36 @@
+INSTALACION DOCKER
+
+sudo apt update
+
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+
+sudo apt install docker-ce
+
+VERIFICAR: sudo systemctl status docker
+
+Usar docker sin sudo: 
+sudo usermod -aG docker ${USER}
+su - ${USER}
+
+——
+Docker Compose
+
+docker compose version
+——
+INTALACION EN UVLHUB
+
+cp .env.docker.example .env
+(Sudo) docker compose -f docker/docker-compose.dev.yml up -d 
+
+docker compose -f docker/docker-compose.dev.yml down
+docker compose -f docker/docker-compose.dev.yml down -v (elimina volumenes)
+
+docker compose -f docker/docker-compose.dev.yml up -d --build
+(Si hay modificaciones en archivos)
+
